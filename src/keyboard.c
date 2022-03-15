@@ -525,6 +525,7 @@ long kbd_process_key_event(struct keyboard *kbd,
 
 			/* TODO: enforce this as a code in the config. */
 			//kbd_execute_sequence(kbd, sequence, dl != kbd->layout);
+			// XXX as with OP_KEYSEQ need to trigger end on key release...
 			active_sequence = *sequence;
 			kbd_start_sequence(kbd, sequence, dl != kbd->layout);
 		} else {
