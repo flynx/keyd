@@ -524,7 +524,9 @@ long kbd_process_key_event(struct keyboard *kbd,
 			kbd_deactivate_layer(kbd, layer, 1);
 
 			/* TODO: enforce this as a code in the config. */
-			kbd_execute_sequence(kbd, sequence, dl != kbd->layout);
+			//kbd_execute_sequence(kbd, sequence, dl != kbd->layout);
+			active_sequence = *sequence;
+			kbd_start_sequence(kbd, sequence, dl != kbd->layout);
 		} else {
 			kbd_deactivate_layer(kbd, layer, 1);
 		}
